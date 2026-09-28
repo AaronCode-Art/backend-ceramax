@@ -1,0 +1,14 @@
+package com.ceramax.ceramax.dto.resena;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
+public record ResenaRequest(
+        @NotNull Long productoId,
+        @NotNull Long usuarioId,
+        Long pedidoId,
+        @NotNull @Min(1) @Max(5) Short calificacion,
+        String titulo,
+        String comentario
+) {}
